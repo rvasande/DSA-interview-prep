@@ -5,10 +5,11 @@
 // * * * * * *
 // * * * * * *
 // * * * * * *
-function pattern01(size) {
-  for (let i = 0; i < size; i++) {
+
+function pattern01(n) {
+  for (let i = 0; i < n; i++) {
     let row = "";
-    for (let j = 0; j < size; j++) {
+    for (let j = 0; j < n; j++) {
       row += "* ";
     }
     console.log(row);
@@ -22,23 +23,23 @@ function pattern01(size) {
 // * * * *
 // * * * * *
 // * * * * * *
-function pattern02(size) {
-  for (let i = 0; i < size; i++) {
+function pattern02(n) {
+  for (let i = 0; i < n; i++) {
     let row = "";
-    for (let j = 0; j <= i; j++) {
+    for (let j = 0; j < i; j++) {
       row += "* ";
     }
     console.log(row);
   }
 }
-// pattern02(6);
+// pattern02(10)
 
 // 1
 // 1 2
 // 1 2 3
 // 1 2 3 4
-function pattern03(size) {
-  for (let i = 1; i < size; i++) {
+function pattern03(n) {
+  for (let i = 1; i <= n; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
       row += j + " ";
@@ -46,7 +47,6 @@ function pattern03(size) {
     console.log(row);
   }
 }
-
 // pattern03(5)
 
 // 1
@@ -55,8 +55,8 @@ function pattern03(size) {
 // 4 4 4 4
 // 5 5 5 5 5
 // 6 6 6 6 6 6
-function pattern04(size) {
-  for (let i = 1; i < size; i++) {
+function pattern04(n) {
+  for (let i = 1; i <= n; i++) {
     let row = "";
     for (let j = 1; j <= i; j++) {
       row += i + " ";
@@ -64,7 +64,7 @@ function pattern04(size) {
     console.log(row);
   }
 }
-// pattern04(5)
+// pattern04(6)
 
 // * * * * * *
 // * * * * *
@@ -72,16 +72,16 @@ function pattern04(size) {
 // * * *
 // * *
 // *
-function pattern05(size) {
-  for (let i = 1; i < size; i++) {
+function pattern05(n) {
+  for (let i = 0; i < n; i++) {
     let row = "";
-    for (let j = 1; j < size - i + 1; j++) {
+    for (let j = 0; j < n - i; j++) {
       row += "* ";
     }
     console.log(row);
   }
 }
-// pattern05(5)
+// pattern05(6);
 
 // 1 2 3 4 5 6
 // 1 2 3 4 5
@@ -89,16 +89,16 @@ function pattern05(size) {
 // 1 2 3
 // 1 2
 // 1
-function pattern06(size) {
-  for (let i = 1; i < size; i++) {
+function pattern06(n) {
+  for (let i = 1; i <= n; i++) {
     let row = "";
-    for (let j = 1; j < size - i + 1; j++) {
+    for (let j = 1; j <= n - i; j++) {
       row += j + " ";
     }
     console.log(row);
   }
 }
-// pattern06(6)
+// pattern06(10)
 
 //      *
 //     ***
@@ -107,25 +107,25 @@ function pattern06(size) {
 //  *********
 // ***********
 // [space,star,space]
-function pattern07(size) {
-  for (let i = 0; i < size; i++) {
+function pattern07(n) {
+  for (let i = 1; i <= n; i++) {
     let row = "";
     //space
-    for (let j = 0; j < size - i - 1; j++) {
+    for (let j = 1; j <= n - i; j++) {
       row += " ";
     }
     //star
-    for (let j = 0; j < 2 * i + 1; j++) {
-      row += "* ";
+    for(let j=1; j<=2*i-1; j++){
+        row += '* '
     }
     //space
-    for (let j = 0; j < size - i - 1; j++) {
+    for (let j = 1; j <= n - i; j++) {
       row += " ";
     }
     console.log(row);
   }
 }
-// pattern07(10);
+// pattern07(6)
 
 // ***********
 //  *********
@@ -133,24 +133,25 @@ function pattern07(size) {
 //    *****
 //     ***
 //      *
-function pattern08(size) {
-  for (let i = 0; i < size; i++) {
-    let row = "";
-    //space
-    for (let j = 0; j < i; j++) {
-      row += " ";
+function pattern08(n){
+    for(let i=1; i<=n; i++){
+        let row =''
+        //space
+        for(let j=1; j<=i; j++){
+            row += ' '
+        }
+        //star
+        for(let j=1; j<=2*n - (2*i - 1); j++){
+            row += '* '
+        }
+        //space
+        for(let j=1; j<=i; j++){
+            row += ' '
+        }
+        console.log(row);
     }
-    //star
-    for (let j = 0; j < 2*size-(2*i + 1); j++) {
-      row += "* ";
-    }
-    for (let j = 0; j < i; j++) {
-      row += " ";
-    }
-    console.log(row);
-  }
 }
-// pattern08(10);
+// pattern08(6)
 
 //      *
 //     ***
@@ -178,22 +179,15 @@ function pattern08(size) {
 // ***    
 // **
 // *
-function pattern09(size){
-  for(let i=1; i<=2*size-1; i++){
-    let row =''
-    let star = i
-    if(i > size)  star = 2*size - i
-    for(let j=1; j<=star; j++ ){
-    row +=  '* '
+function pattern09(n){
+    for(let i=1; i<=2*n-1; i++){
+        let row =''
+        let stars = i
+        if(i > n) stars = 2*n - i
+        for(let j=1; j<=stars; j++){
+            row += '* '
+        }
+        console.log(row);
     }
-    console.log(row);
-  }
 }
-// pattern09(5)
-
-// 1
-// 01
-// 101
-// 0101
-// 10101
-// 010101
+pattern09(6)
