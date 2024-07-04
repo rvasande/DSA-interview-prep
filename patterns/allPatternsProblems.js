@@ -111,21 +111,21 @@ function pattern07(size) {
   for (let i = 0; i < size; i++) {
     let row = "";
     //space
-    for (let j = 0; j < size - i - 1; j++) {
+    for (let j = 0; j < size - i + 1; j++) {
       row += " ";
     }
     //star
     for (let j = 0; j < 2 * i + 1; j++) {
-      row += "* ";
+      row += "*";
     }
     //space
-    for (let j = 0; j < size - i - 1; j++) {
+    for (let j = 0; j < size - i + 1; j++) {
       row += " ";
     }
     console.log(row);
   }
 }
-// pattern07(10);
+// pattern07(4);
 
 // ***********
 //  *********
@@ -141,8 +141,8 @@ function pattern08(size) {
       row += " ";
     }
     //star
-    for (let j = 0; j < 2*size-(2*i + 1); j++) {
-      row += "* ";
+    for (let j = 0; j < 2 * size - (2 * i + 1); j++) {
+      row += "*";
     }
     for (let j = 0; j < i; j++) {
       row += " ";
@@ -154,37 +154,37 @@ function pattern08(size) {
 
 //      *
 //     ***
-//    ***** 
+//    *****
 //   *******
 //  *********
-// ***********  
+// ***********
 // ***********
 //  *********
 //   *******
-//    ***** 
-//     ***    
+//    *****
+//     ***
 //      *
 // pattern07(5)
 // pattern08(5)
 
 // *
 // **
-// *** 
+// ***
 // ****
 // *****
-// ******  
+// ******
 // *****
 // ****
-// ***    
+// ***
 // **
 // *
-function pattern09(size){
-  for(let i=1; i<=2*size-1; i++){
-    let row =''
-    let star = i
-    if(i > size)  star = 2*size - i
-    for(let j=1; j<=star; j++ ){
-    row +=  '* '
+function pattern09(size) {
+  for (let i = 1; i <= 2 * size - 1; i++) {
+    let row = "";
+    let star = i;
+    if (i > size) star = 2 * size - i;
+    for (let j = 1; j <= star; j++) {
+      row += "* ";
     }
     console.log(row);
   }
@@ -197,3 +197,171 @@ function pattern09(size){
 // 0101
 // 10101
 // 010101
+
+function pattern10(n) {
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    let start = 1;
+    if (i % 2 === 0) {
+      start = 1;
+    } else {
+      start = 0;
+    }
+
+    for (let j = 1; j <= i; j++) {
+      start = 1 - start;
+      row += start + " ";
+    }
+    console.log(row);
+  }
+}
+// pattern10(5);
+
+// 1          1
+// 12        21
+// 123      321
+// 1234    4321
+// 12345  54321
+// 123456654321
+
+function pattern11(n) {
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+      row += j;
+    }
+
+    for (let k = 0; k < 2 * n - 2 * i; k++) {
+      row += " ";
+    }
+
+    for (let j = i; j >= 1; j--) {
+      row += j;
+    }
+
+    console.log(row);
+  }
+}
+
+// pattern11(9);
+
+// 1
+// 2  3
+// 4  5  6
+// 7  8  9  10
+// 11  12  13  14  15
+// 16  17  18  19  20  21
+
+function pattern12(n) {
+  let num = 1;
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += num + " ";
+      num++;
+    }
+    console.log(row);
+  }
+}
+// pattern12(4);
+
+// A
+// A B
+// A B C
+// A B C D
+// A B C D E
+// A B C D E F
+
+function pattern13(n) {
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += String.fromCharCode(64 + j + " ");
+    }
+    console.log(row);
+  }
+}
+// pattern13(5)
+
+// A B C D E F
+// A B C D E
+// A B C D
+// A B C
+// A B
+// A
+
+function pattern14(n) {
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= n - i; j++) {
+      row += String.fromCharCode(64 + j + " ");
+    }
+    console.log(row);
+  }
+}
+// pattern14(6)
+
+// A
+// B B
+// C C C
+// D D D D
+// E E E E E
+// F F F F F F
+
+function pattern15(n) {
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += String.fromCharCode(64 + i + " ");
+    }
+    console.log(row);
+  }
+}
+// pattern15(5)
+
+//      A
+//     ABA
+//    ABCBA
+//   ABCDCBA
+//  ABCDEDCBA
+// ABCDEFEDCBA
+
+function pattern16(n) {
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= n - i + 1; j++) {
+      row += " ";
+    }
+    for (let j = 1; j <= 2 * i - 1; j++) {
+      row += String.fromCharCode(64 + j + " ");
+    }
+    for (let j = 1; j <= n - i + 1; j++) {
+      row += " ";
+    }
+    console.log(row);
+  }
+}
+// pattern16(4);
+
+// F
+// E F
+// D E F
+// C D E F
+// B C D E F
+// A B C D E F
+
+function pattern17(n){
+  let last = 65 + n
+  for(let i=1; i<=n; i++){
+    let row= ''
+    for(let j=1; j<=i; j++){
+      row += String.fromCharCode(last - i)
+    }
+    console.log(row);
+  }
+}
+pattern17(5)
+
+
+

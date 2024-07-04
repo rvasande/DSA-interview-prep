@@ -100,7 +100,7 @@ function pattern06(n) {
       row += " ";
     }
     for (let j = 1; j <= 2 * i - 1; j++) {
-      row += "* ";
+      row += "*";
     }
     for (let j = 1; j <= n - i + 1; j++) {
       row += " ";
@@ -108,7 +108,7 @@ function pattern06(n) {
     console.log(row);
   }
 }
-// pattern06(5)
+pattern06(5)
 
 // ***********
 //  *********
@@ -123,7 +123,7 @@ function pattern07(n) {
       row += " ";
     }
     for (let j = 0; j <= 2 * n + 1 - (2 * i + 1); j++) {
-      row += "* ";
+      row += "*";
     }
     for (let j = 0; j <= i; j++) {
       row += " ";
@@ -165,4 +165,4 @@ function pattern08(n){
    pattern01(n)
    pattern04(n-1)
 }
-pattern08(10)
+// pattern08(10)
