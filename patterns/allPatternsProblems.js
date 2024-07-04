@@ -351,17 +351,125 @@ function pattern16(n) {
 // B C D E F
 // A B C D E F
 
-function pattern17(n){
-  let last = 65 + n
-  for(let i=1; i<=n; i++){
-    let row= ''
-    for(let j=1; j<=i; j++){
-      row += String.fromCharCode(last - i)
+function pattern17(n) {
+  let last = 65 + n;
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += String.fromCharCode(last - i);
     }
     console.log(row);
   }
 }
-pattern17(5)
+// pattern17(5);
 
+// ************
+// *****  *****
+// ****    ****
+// ***      ***
+// **        **
+// *          *
+// *          *
+// **        **
+// ***      ***
+// ****    ****
+// *****  *****
+// ************
+function pattern18(n) {
+  for (let i = 1; i < n; i++) {
+    let row = "";
 
+    for (let j = 1; j <= n - i; j++) {
+      row += "*";
+    }
 
+    for (let j = 1; j <= 2 * i; j++) {
+      row += " ";
+    }
+
+    for (let j = 1; j <= n - i; j++) {
+      row += "*";
+    }
+    console.log(row);
+  }
+}
+// pattern18(6);
+
+function pattern19(n) {
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+
+    for (let k = 0; k < 2 * n - 2 * i; k++) {
+      row += " ";
+    }
+
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+
+    console.log(row);
+  }
+}
+// pattern19(6);
+
+function pattern20(n) {
+  pattern18(n);
+  pattern19(n);
+}
+
+// pattern20(6);
+
+// *          *
+// **        **
+// ***      ***
+// ****    ****
+// *****  *****
+// ************
+// *****  *****
+// ****    ****
+// ***      ***
+// **        **
+// *          *
+
+function pattern21(n) {
+  pattern19(n);
+  pattern18(n);
+}
+// pattern21(6)
+
+// ******
+// *    *
+// *    *
+// *    *
+// *    *
+// ******
+function pattern22(n) {
+  for (let i = 0; i < n; i++) {
+    let row = "";
+    for (let j = 0; j < n; j++) {
+      if (i == 0 || j == 0 || i == n - 1 || j == n - 1) {
+        row += "*";
+      } else {
+        row += " ";
+      }
+    }
+    console.log(row);
+  }
+}
+pattern22(6);
+
+// 6 6 6 6 6 6 6 6 6 6 6
+// 6 5 5 5 5 5 5 5 5 5 6
+// 6 5 4 4 4 4 4 4 4 5 6
+// 6 5 4 3 3 3 3 3 4 5 6
+// 6 5 4 3 2 2 2 3 4 5 6
+// 6 5 4 3 2 1 2 3 4 5 6
+// 6 5 4 3 2 2 2 3 4 5 6
+// 6 5 4 3 3 3 3 3 4 5 6
+// 6 5 4 4 4 4 4 4 4 5 6
+// 6 5 5 5 5 5 5 5 5 5 6
+// 6 6 6 6 6 6 6 6 6 6 6
