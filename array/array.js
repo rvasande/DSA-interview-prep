@@ -40,3 +40,25 @@ function secondLargest(arr) {
   console.log(secondLrg);
 }
 // secondLargest([1, 2, 3, 8, 6, 4, 9, 7]);
+
+//3) check if array is sorted or not
+function sorted(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] <= arr[i+1]) {
+
+    } else {
+        return false
+    }
+  }
+  return true
+}
+// console.log(sorted([1, 2, 3, 4, 5, 6]));
+
+// 4) remove duplicate element from an array 
+
+function rmDulicate(arr){
+    let result = new Set(arr)
+    console.log(result);
+
+}
+rmDulicate([1,2,3,3,4,4,5,5])
