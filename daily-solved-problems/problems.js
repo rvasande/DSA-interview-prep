@@ -39,5 +39,15 @@ function anotherAppr(n){
         });
         console.log(largestNumber);
     }
-    largestNo(arr)
+    // largestNo(arr)
 }
+
+// 3) reverse an array 
+function reverseArr(arr){
+    let emptyArr = []
+    for(let i = arr.length-1; i>=0; i--){
+        emptyArr.push(arr[i])
+        } 
+    console.log(emptyArr);
+}
+// reverseArr([1,2,3,4,5,6])
