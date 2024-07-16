@@ -1,43 +1,57 @@
 // 1) largest element in an array
 function largestEl(arr) {
-  let largestNo = arr[0];
-  arr.map((el) => {
-    if (el > largestNo) {
-      largestNo = el;
-    }
-  });
-  console.log(largestNo);
-}
-// largestEl([3,21,4,5,6])
-
-// 2) second largest element in an array 
-function secondLargest(arr) {
-  let largest = arr[0];
-  let second = -1;
+  let temp = arr[0];
   for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] > largest) {
-      largest = arr[i];
+    if (arr[i] > temp) {
+      temp = arr[i];
     }
   }
+  console.log(temp);
+}
+// largestEl([1, 2, 33, 22, 43, 11]);
+
+function largestElUsingSorting(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] > second && arr[i] != largest) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  // console.log(arr[5]);
+}
+// largestElUsingSorting([2, 3, 55, 21, 23, 4]);
+
+// 2) second largest element in an array
+function secondLargest(arr) {
+  let temp = arr[0];
+  let second = 0;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > temp) {
+      temp = arr[i];
+    }
+  }
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] > second && arr[i] != temp) {
       second = arr[i];
     }
   }
   console.log(second);
 }
+// secondLargest([1, 2, 33, 22, 43, 11]);
 
-// secondLargest([1, 2, 45, 53, 1, 9]);
-
-// 3) check array is sorted or not 
-function sorted(arr){
-    for(let i=0; i<arr.length -1; i++){
-        if(arr[i] <= arr[i+1]){
-
-        }else{
-            return false
-        }
+// 3) check array is sorted or not
+function arrSorted(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] <= arr[i + 1]) {
+    } else {
+      return false;
     }
-    return true
+  }
+  return true;
 }
-// console.log(sorted([11,2,3,4,5,6,7]));
+// console.log(arrSorted([2, 3, 5,  8, 9]));
+
