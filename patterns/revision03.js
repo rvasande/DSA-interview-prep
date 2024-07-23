@@ -318,28 +318,27 @@ function pattern16(n) {
 // *****  *****
 // ************
 function pattern17(n) {
-    for(let i=1; i<=n; i++){
-        let row = ''
-        for(let j=1; j<=i; j++){
-            row += '*'
-        }
-        for(let j=1; j<=2*n-2*i; j++){
-            row += ' '
-        }
-        for(let j=1; j<=i; j++){
-            row += '*'
-        }
-        console.log(row);
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= i; j++) {
+      row += "*";
     }
+    for (let j = 1; j <= 2 * n - 2 * i; j++) {
+      row += " ";
+    }
+    for (let j = 1; j <= i; j++) {
+      row += "*";
+    }
+    console.log(row);
+  }
 }
 // pattern17(6);
 
 function pattern18(n) {
-    pattern16(n)
-    pattern17(n)
+  pattern16(n);
+  pattern17(n);
 }
 // pattern18(6);
-
 
 // *          *
 // **        **
@@ -353,11 +352,10 @@ function pattern18(n) {
 // **        **
 // *          *
 function pattern19(n) {
-    pattern17(n)
-    pattern16(n)
+  pattern17(n);
+  pattern16(n);
 }
 // pattern19(6);
-
 
 // ******
 // *    *
@@ -366,16 +364,82 @@ function pattern19(n) {
 // *    *
 // ******
 function pattern20(n) {
-    for(let i=0; i<n; i++){
-        let row =''
-        for(let j=0; j<n; j++){
-            if(i ===0 || j=== 0 || i == n -1 || j == n -1){
-                row += '*'
-            }else{
-                row += ' '
-            }
-        }
-        console.log(row);
+  for (let i = 0; i < n; i++) {
+    let row = "";
+    for (let j = 0; j < n; j++) {
+      if (i === 0 || j === 0 || i == n - 1 || j == n - 1) {
+        row += "*";
+      } else {
+        row += " ";
+      }
     }
+    console.log(row);
+  }
 }
-pattern20(6);
+// pattern20(6);
+
+// 10101
+// 01010
+// 10101
+// 01010
+function pattern21(n) {
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    let num = 1;
+    if (i % 2 === 0) {
+      num = 0;
+    } else {
+      num = 1;
+    }
+    for (let j = 1; j <= n; j++) {
+      num = 1 - num;
+      row += num + " ";
+    }
+    console.log(row);
+  }
+}
+// pattern21(5);
+
+
+// *
+// 11
+// ***
+// 3333
+// *****
+// 555555
+function pattern22(n){
+for(let i= 1; i<=n; i++){
+  let row = ""
+
+  for(let j=1; j<=i; j++){
+    if(i % 2 === 0){
+      row += i
+    }else{
+      row += "*"
+    }
+  }
+  console.log(row);
+}
+}
+// pattern22(8)
+
+// 43210
+// 32100
+// 21000
+// 10000
+// 00000
+
+function pattern23(n) {
+  for (let i = 0; i <= n; i++) {
+    let row = '';
+    for (let j = n - i; j >= 0; j--) {
+      row += j;
+    }
+    for (let k = 1; k <= i; k++) {
+      row += '0';
+    }
+    console.log(row);
+  }
+}
+
+pattern23(4);

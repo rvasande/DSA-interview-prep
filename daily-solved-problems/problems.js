@@ -1,53 +1,73 @@
-//1) reverse string 
-function reverseStr(str){
-    let revrs = str.split("")
-    let result = revrs.reverse().join("")
+//1) reverse string
+function reverseStr(str) {
+  let revrs = str.split("");
+  let result = revrs.reverse().join("");
 
-    if(str === result){
-        console.log(`string is pallindrom and reverse string is ===> ${result}`);
-
-        }else{
-            console.log(`string is not pallindrom and reverse string is  ===> ${result}`);
-
-        }
-        
+  if (str === result) {
+    console.log(`string is pallindrom and reverse string is ===> ${result}`);
+  } else {
+    console.log(
+      `string is not pallindrom and reverse string is  ===> ${result}`
+    );
+  }
 }
 // reverseStr('olo')
 
-// another approach 
-function anotherAppr(n){
-    let str = ''
-    for(let i=n.length-1; i>=0; i--){
-        str = str.concat(n[i])
-        }
-    console.log(str)
+// another approach
+function anotherAppr(n) {
+  let str = "";
+  for (let i = n.length - 1; i >= 0; i--) {
+    str = str.concat(n[i]);
+  }
+  console.log(str);
 }
 // anotherAppr('vassu')
 
-
 // 2) find largest number from array
 {
-    let arr = [1,2,3,4,5,64,9]
+  let arr = [1, 2, 3, 4, 5, 64, 9];
 
-    function largestNo(arr){
-        let largestNumber = arr[0]
+  function largestNo(arr) {
+    let largestNumber = arr[0];
 
-        arr.forEach(element => {
-            if(element > largestNumber){
-                largestNumber = element
-            }
-        });
-        console.log(largestNumber);
-    }
-    // largestNo(arr)
+    arr.forEach((element) => {
+      if (element > largestNumber) {
+        largestNumber = element;
+      }
+    });
+    console.log(largestNumber);
+  }
+  // largestNo(arr)
 }
 
-// 3) reverse an array 
-function reverseArr(arr){
-    let emptyArr = []
-    for(let i = arr.length-1; i>=0; i--){
-        emptyArr.push(arr[i])
-        } 
-    console.log(emptyArr);
+// 3) reverse an array
+function reverseArr(arr) {
+  let emptyArr = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    emptyArr.push(arr[i]);
+  }
+  console.log(emptyArr);
 }
 // reverseArr([1,2,3,4,5,6])
+
+//check given word is pallindrom or not
+function pallindromWord(str) {
+  let temp = str.split("");
+  let result = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    result = result.concat(temp[i]);
+  }
+  if (result === str) {
+    console.log("given string is pallindrom");
+  } else {
+    console.log("given string is not pallindrom");
+  }
+}
+// pallindromWord('madam')
+
+function avgNo(arr) {
+let temp = arr.reduce((acc,el) => acc + el)
+let result = temp % arr.length
+console.log(`average of number is ${result}`);
+}
+avgNo([1, 2, 3, 4, 2]);
