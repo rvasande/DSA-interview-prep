@@ -44,21 +44,30 @@ function secondLargest(arr) {
 //3) check if array is sorted or not
 function sorted(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] <= arr[i+1]) {
-
+    if (arr[i] <= arr[i + 1]) {
     } else {
-        return false
+      return false;
     }
   }
-  return true
+  return true;
 }
 // console.log(sorted([1, 2, 3, 4, 5, 6]));
 
-// 4) remove duplicate element from an array 
+// 4) remove duplicate element from an array
 
-function rmDulicate(arr){
-    let result = new Set(arr)
-    console.log(result);
-
+function rmDulicate(arr) {
+  let result = new Set(arr);
+  console.log(result);
 }
-rmDulicate([1,2,3,3,4,4,5,5])
+// rmDulicate([1,2,3,3,4,4,5,5])
+
+function minElement(arr) {
+  let min = arr[0];
+  for (let i = 0; i < arr.length ; i++) {
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  console.log(min);
+}
+minElement([9, 6, 5, 3, 2, 4, 8, 1]);
