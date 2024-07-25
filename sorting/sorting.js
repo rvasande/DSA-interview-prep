@@ -11,7 +11,7 @@ function bubbleSortAc(arr) {
   }
   console.log(arr);
 }
-bubbleSortAc([3, 1, 5, 9, 8, 5, 4]);
+// bubbleSortAc([3, 1, 5, 9, 8, 5, 4]);
 
 function selectionSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
@@ -43,3 +43,45 @@ function insertionSort(arr) {
   console.log(arr);
 }
 // insertionSort([8, 7, 4, 5, 6, 1, 2, 3]);
+
+//Quik sort
+{
+  let arr = [3, 1, 5, 9, 8, 5, 4];
+  let lb = 0;
+  let ub = arr.length - 1;
+  function partition(arr, lb, ub) {
+    let pivot = arr[lb];
+    let start = lb;
+    let end = ub;
+
+    while (start < end) {
+      while (arr[start] <= pivot) {
+        start++;
+      }
+      while (arr[end] > pivot) {
+        end--;
+      }
+
+      if (start < end) {
+        let temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+      }
+    }
+
+    let temp = arr[lb];
+    arr[lb] = arr[end];
+    arr[end] = temp;
+    return end;
+  }
+
+  function quikSort(arr, lb, ub) {
+    if (lb < ub) {
+      let loc = partition(arr, lb, ub);
+      quikSort(arr, lb, loc - 1);
+      quikSort(arr, loc + 1, ub);
+    }
+  }
+  quikSort(arr, lb, ub);
+  console.log("sorted Array is ", arr);
+}

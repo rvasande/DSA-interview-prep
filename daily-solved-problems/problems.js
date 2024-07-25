@@ -50,7 +50,7 @@ function reverseArr(arr) {
 }
 // reverseArr([1,2,3,4,5,6])
 
-//check given word is pallindrom or not
+// 4) check given word is pallindrom or not
 function pallindromWord(str) {
   let temp = str.split("");
   let result = "";
@@ -65,9 +65,31 @@ function pallindromWord(str) {
 }
 // pallindromWord('madam')
 
+// 5) average of number
 function avgNo(arr) {
-let temp = arr.reduce((acc,el) => acc + el)
-let result = temp % arr.length
-console.log(`average of number is ${result}`);
+  let temp = arr.reduce((acc, el) => acc + el);
+  let result = temp % arr.length;
+  console.log(`average of number is ${result}`);
 }
-avgNo([1, 2, 3, 4, 2]);
+// avgNo([1, 2, 3, 4, 2]);
+
+// 6) reverse a sentance
+function reverseSen(str) {
+  let newArr = str.split(" ");
+  let result = [];
+  for (let i = newArr.length - 1; i >= 0; i--) {
+    result.push(newArr[i]);
+  }
+  result = result.join(" ");
+  console.log(result);
+}
+// reverseSen("hello my name is vaasu");
+
+// 7) return new array of even numbers
+function evenNo(arr){
+  let result = arr.filter((el) => el % 2 === 0)
+  console.log(result);
+}
+// evenNo([,1,2,3,4,5,6,7,8,9])
+
+// 8)
