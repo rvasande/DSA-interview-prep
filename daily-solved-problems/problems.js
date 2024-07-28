@@ -86,10 +86,37 @@ function reverseSen(str) {
 // reverseSen("hello my name is vaasu");
 
 // 7) return new array of even numbers
-function evenNo(arr){
-  let result = arr.filter((el) => el % 2 === 0)
+function evenNo(arr) {
+  let result = arr.filter((el) => el % 2 === 0);
   console.log(result);
 }
 // evenNo([,1,2,3,4,5,6,7,8,9])
 
 // 8)
+
+//counter numbers of vowels
+function vowel(str) {
+  let vowels = "aeiouAEIOU";
+  let counter = 0;
+
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      counter++;
+    }
+  }
+  console.log(counter);
+}
+// vowel("rushikesh vasande");
+
+//reverse array without using another array
+function reverseArray(arr) {
+  let start = 0;
+  let end = arr.length - 1;
+  while (start < end) {
+    let temp = arr[start]
+    arr[start] = arr[end]
+    arr[end] = temp
+  }
+  console.log(arr);
+}
+// reverseArr([8, 6, 9, 0, 2, 1, 3, 4]);

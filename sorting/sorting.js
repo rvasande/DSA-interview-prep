@@ -49,6 +49,7 @@ function insertionSort(arr) {
   let arr = [3, 1, 5, 9, 8, 5, 4];
   let lb = 0;
   let ub = arr.length - 1;
+
   function partition(arr, lb, ub) {
     let pivot = arr[lb];
     let start = lb;
@@ -83,5 +84,23 @@ function insertionSort(arr) {
     }
   }
   quikSort(arr, lb, ub);
-  console.log("sorted Array is ", arr);
+  // console.log("sorted Array is ", arr);
 }
+
+//merge sort
+{
+
+  let arr = [9, 7, 8, 6, 3, 4, 5, 1];
+  let lb = 0;
+  let ub = arr.length - 1;
+
+  function mergeSort(arr, lb, ub){
+    if (lb < ub){
+      let mid = (lb + ub) / 2;
+      mergeSort(arr, lb, mid);
+      mergeSort(arr, mid + 1, ub);
+    }
+  }
+  // mergeSort(arr, lb, ub);
+}
+
