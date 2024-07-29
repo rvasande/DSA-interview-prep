@@ -83,3 +83,4 @@ function insertionSort(arr) {
   quikSort(arr, lb, ub);
   console.log(arr);
 }
+

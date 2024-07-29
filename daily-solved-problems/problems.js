@@ -92,9 +92,7 @@ function evenNo(arr) {
 }
 // evenNo([,1,2,3,4,5,6,7,8,9])
 
-// 8)
-
-//counter numbers of vowels
+// 8) counter numbers of vowels
 function vowel(str) {
   let vowels = "aeiouAEIOU";
   let counter = 0;
@@ -108,15 +106,61 @@ function vowel(str) {
 }
 // vowel("rushikesh vasande");
 
-//reverse array without using another array
+//9) reverse array without using another array
 function reverseArray(arr) {
   let start = 0;
   let end = arr.length - 1;
   while (start < end) {
-    let temp = arr[start]
-    arr[start] = arr[end]
-    arr[end] = temp
+    let temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
   }
   console.log(arr);
 }
 // reverseArr([8, 6, 9, 0, 2, 1, 3, 4]);
+
+//10) find largest difference between two numbers in array
+function largestDifference(arr) {
+  let dif = [];
+  for (let i = 0; i < arr.length - 1; i++) {
+    dif.push(arr[i] - arr[i + 1]);
+  }
+  console.log(dif);
+}
+// largestDifference([2, 3, 6, 8, 1, 10]);
+
+//11) swap the case of each character of string
+function swapCharacter(str) {
+  let temp = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i].toUpperCase()) {
+      temp = temp.concat(str[i].toLowerCase());
+    } else if (str[i] === str[i].toLowerCase()) {
+      temp = temp.concat(str[i].toUpperCase());
+    }
+  }
+  console.log(temp);
+}
+// swapCharacter("rusHikesH vAsAnDE");
+
+//12) remove special characters from given string
+function removeSpecialChar(str) {
+  let remove = "";
+  for (let char of str) {
+    if (
+      (char >= "a" && char <= "z") ||
+      (char >= "A" && char <= "Z") ||
+      char === ""
+    ) {
+      remove += char;
+    }
+  }
+  console.log(remove);
+}
+// removeSpecialChar("rus@#hi!kesh$%");
+
+// 13) sort the sentence on the basis of length of words
+function sortWord(str) {
+
+}
+sortWord("rushikesh is a");
