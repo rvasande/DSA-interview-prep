@@ -55,3 +55,21 @@ function arrSorted(arr) {
 }
 // console.log(arrSorted([2, 3, 5,  8, 9]));
 
+
+function common(a,b){
+let temp = ''
+for(let i=0; i<a.length; i++){
+  for (let j = 0; j < b.length; j++) {
+if(a[i] === b[j]){
+  temp += a[i]
+}    
+  }
+}
+console.log(temp);
+
+}
+// common('aaabcs','tttsbct')
+
+
+
+
