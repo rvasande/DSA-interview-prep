@@ -63,11 +63,145 @@ function rmDulicate(arr) {
 
 function minElement(arr) {
   let min = arr[0];
-  for (let i = 0; i < arr.length ; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] < min) {
       min = arr[i];
     }
   }
   console.log(min);
 }
-minElement([9, 6, 5, 3, 2, 4, 8, 1]);
+// minElement([9, 6, 5, 3, 2, 4, 8, 1]);
+
+// left rotate array by one place
+function leftRotate(arr) {
+  let temp = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    arr[i - 1] = arr[i];
+  }
+  arr[arr.length - 1] = temp;
+  console.log(arr);
+}
+// leftRotate([1,2,3,4,5,6,7,8,9])
+
+// left rotation of array by k position
+function rotationOfArray(arr, k) {
+  let n = arr.length;
+  k = k % n;
+  let temp = arr.slice(0, k);
+
+  for (let i = k; i < n; i++) {
+    arr[i - k] = arr[i];
+  }
+
+  for (let i = n - k; i < n; i++) {
+    arr[i] = temp[i - (n - k)];
+  }
+  console.log(arr);
+}
+// rotationOfArray([1, 2, 3, 4, 5, 6, 7, 8, 9], 2);
+
+// another approach to left rotate array ky k place
+function anotherApproach(arr, k) {
+  let n = arr.length;
+  k = k % n;
+  for (let i = 0; i < k; i++) {
+    let temp = arr[0];
+    for (let i = 1; i < n; i++) {
+      arr[i - 1] = arr[i];
+    }
+    arr[n - 1] = temp;
+  }
+  console.log(arr);
+}
+// anotherApproach([1, 2, 3, 4, 5, 6, 7, 8], 3);
+
+// OPTIMAL solution of left rotation of array bu k place
+function optimalRotation(arr, k) {
+  let n = arr.length;
+  k = k % n;
+  let a1 = arr.slice(0, k).reverse();
+  let a2 = arr.slice(k, n).reverse();
+  arr = a1.concat(a2).reverse();
+  console.log(arr);
+}
+// optimalRotation([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
+
+// right rotate array by 1 place
+function rightRotate(arr) {
+  let n = arr.length;
+  let temp = arr[n - 1];
+  for (let i = n - 1; i > 0; i--) {
+    arr[i] = arr[i - 1];
+  }
+  arr[0] = temp;
+  console.log(arr);
+}
+// rightRotate([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+// right rotation by k place
+function rightRotationByKPlace(arr, k) {
+  let n = arr.length;
+  k = k % n;
+  let temp = arr.slice(-k);
+  for (let i = n - 1; i > 0; i--) {
+    arr[i] = arr[i - k];
+  }
+  for (let i = 0; i < k; i++) {
+    arr[i] = temp[i];
+  }
+  console.log(arr);
+}
+// rightRotationByKPlace([1, 2, 3, 4, 5, 6, 7, 8, 9], 3);
+
+// another approach of right rotation of array by k place
+function anotherRightRotation(arr, k) {
+  let n = arr.length;
+  k = k % n;
+  for (let i = 0; i < k; i++) {
+    let temp = arr[n - 1];
+    for (let i = n - 1; i > 0; i--) {
+      arr[i] = arr[i - 1];
+    }
+    arr[0] = temp;
+  }
+  console.log(arr);
+}
+// anotherRightRotation([1,2,3,4,5,6,7,8],2)
+
+// moving zeros to end of the array
+function movingZeros(arr) {
+  let index = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      arr[index] = arr[i];
+      index++;
+    }
+  }
+  for (let i = index; i < arr.length; i++) {
+    arr[i] = 0;
+  }
+  console.log(arr);
+}
+// movingZeros([1,2,0,5,0,4,0,8,0,7,0,11])
+
+// OPTIMAL solution for moving zeros
+function optimalSolutionOfMoving0(arr) {
+  let j = -1;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      j = i;
+      break;
+    }
+  }
+
+  for(let i=j+1; i<arr.length; i++){
+    if(arr[i] !== 0){
+      let temp = arr[i]
+      arr[i] = arr[j]
+      arr[j] = temp
+      j++
+    }
+  }
+  console.log(arr);
+}
+optimalSolutionOfMoving0([1, 2, 0, 5, 0, 4, 0, 8, 0, 7, 0, 11]);
