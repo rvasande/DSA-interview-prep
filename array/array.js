@@ -194,14 +194,92 @@ function optimalSolutionOfMoving0(arr) {
     }
   }
 
-  for(let i=j+1; i<arr.length; i++){
-    if(arr[i] !== 0){
-      let temp = arr[i]
-      arr[i] = arr[j]
-      arr[j] = temp
-      j++
+  for (let i = j + 1; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      let temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+      j++;
     }
   }
   console.log(arr);
 }
-optimalSolutionOfMoving0([1, 2, 0, 5, 0, 4, 0, 8, 0, 7, 0, 11]);
+// optimalSolutionOfMoving0([1, 2, 0, 5, 0, 4, 0, 8, 0, 7, 0, 11]);
+
+// linear search
+function linearSerach(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+// console.log(linearSerach([1,4,2,3,5,6,5,4,55],525));
+
+//union of 2 sorted array
+function union(arr1, arr2) {
+  let temp = [];
+  let unique = new Set(arr1, arr2);
+  for (let item of unique) {
+    temp.push(item);
+  }
+  console.log(temp);
+}
+// union([1, 2, 2, 3, 4, 5, 6], [2, 3, 4, 5]);
+
+// intersetion of two sorted array
+function intersection(a1, a2) {
+  // let temp = a1.concat(a2)
+  let empty = [];
+  for (let i = 0; i < a1.length; i++) {
+    if (a1[i] !== a1[i + 1]) {
+      for (let j = 0; j < a2.length; j++) {
+        if (a1[i] === a2[j]) {
+          empty.push(a1[i]);
+        }
+      }
+    }
+  }
+  console.log(empty);
+}
+// intersection([1, 2, 2, 3, 4, 5, 6], [2, 2, 3, 4, 5]);
+
+//find missing number
+{
+  // DOUBT
+}
+
+//find maximum consecutive ones
+function maximum(arr) {
+  let counter = 0;
+  let maxi = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 1) {
+      counter++;
+      maxi = Math.max(maxi, counter);
+    } else {
+      counter = 0;
+    }
+  }
+  console.log(maxi);
+}
+// maximum([1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0]);
+
+// find number which appear once and other appears twice
+function once(arr) {
+  let cnt = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[cnt]) {
+      // console.log(arr[i]);
+      cnt++;
+      if (cnt === 1) {
+        return arr[i];
+      }
+    }
+  }
+}
+// console.log(once([1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 6]));
+
+
